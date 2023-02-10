@@ -6,9 +6,9 @@ import {  useEffect, useState } from "react";
 
 const SingleMovie = () => {
     const {id} = useParams();
-    const [isLoading,setIsLoading,isError, setIsError] = useState(true);
+    const [isLoading,setIsLoading] = useState(true);
     const [movie,setMovie] = useState("");
-    const [timerOut, setTimeOut] = useState();
+    const [, setTimeOut] = useState();
 
     const getMovies= async(url)=>{
         setIsLoading(true);

@@ -14,7 +14,7 @@ const AppProvider = ({children})=>{
     const [movie,setMovie] = useState([]);
     const [isError, setIsError] = useState({show:"false", msg:""});
     const [query, setQuery] = useState("titanic");
-    const [timerOut, setTimeOut] = useState();
+    const [, setTimeOut] = useState();
 
 
     const getMovies= async(url)=>{
