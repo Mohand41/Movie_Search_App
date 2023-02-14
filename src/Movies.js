@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
-import { useGlobalContext } from './Context'
+import { useGlobalContext } from './Context';
 
 const Movies = () => {
   const {movie, isLoading} = useGlobalContext();
