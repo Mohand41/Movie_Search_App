@@ -20,23 +20,24 @@ const AppProvider = ({children})=>{
     const getMovies= async(url)=>{
         setIsLoading(true);
         try{
-            const res = await fetch(url);
-            const data = await res.json();
-            console.log(data);
-            if(data.Response === "True"){
-                setIsLoading(false);
+            fetch(url).then(r=> r.json()).then((res)=>{setIsLoading(false);
                 setIsError({
                     show:false,
                     msg: null,
                 });
-                setMovie(data.Search);
-            }else{
-                setIsError({
-                    show:true,
-                    msg: data.Error,
-                });
+                setMovie(res.Search);}).catch((error)=>(console.log(error)))
+            // const res = await fetch(url);
+            // const data = await res.json();
+            // console.log(data);
+            // if(data.Response === "True"){
+                
+            // }else{
+            //     setIsError({
+            //         show:true,
+            //         msg: data.Error,
+            //     });
 
-            }
+            // }
         } catch(error){
             console.log(error);
         }
